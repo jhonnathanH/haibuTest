@@ -1,15 +1,8 @@
+import { Employee } from './../../models/employee';
 import { DetailEmployeePage } from './../detail-employee/detail-employee';
 import { EmployeesServiceProvider } from './../../providers/employees-service/employees-service';
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController, LoadingController, ModalController } from 'ionic-angular';
-import { Employee } from '../../models/employee';
-
-/**
- * Generated class for the FindEmployeesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NavController, NavParams, ToastController, LoadingController, ModalController, AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-find-employees',
@@ -25,6 +18,7 @@ export class FindEmployeesPage {
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
     public modalCtrl: ModalController,
+    public alertCtrl: AlertController,
     public EmployeesService: EmployeesServiceProvider) {
   }
 
@@ -65,7 +59,7 @@ export class FindEmployeesPage {
     // Filter employess
     this.employees = this.employees.filter((item) => {
       return (item.nombre.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1
-             || item.apellido.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1);
+        || item.apellido.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1);
     });
   }
 
@@ -98,6 +92,21 @@ export class FindEmployeesPage {
     });
     loading.present();
     return loading;
+  }
+
+  onEditOrder() {
+    const alert = this.alertCtrl.create({
+      title: 'Editar Empleado',
+      subTitle: 'proximamente funcion a crear',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  onDeleteOrder(index: number) {
+    this.showToast('Elimina empleado solo de este componente/page');
+    this.employees.splice(index, 1);
+    console.log('remove a employee to employees' + this.employees);
   }
 
 }

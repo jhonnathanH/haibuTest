@@ -1,6 +1,6 @@
 <ion-header *ngIf="!ifSelect()">
 
-  <ion-navbar>
+  <ion-navbar color="light-secondary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -51,12 +51,12 @@
         <ion-item-options side="right">
             <button ion-button color="secondary" 
                    clear 
-                   icon-only  (click)="onEditOrder(order,i)">
+                   icon-only  (click)="onEditOrder()">
               <ion-icon name="md-create"></ion-icon>
             </button>
             <button ion-button color="danger" 
                    clear 
-                   icon-only  (click)="onDeleteOrder(order,i)">
+                   icon-only  (click)="onDeleteOrder(i)">
               <ion-icon name="md-trash"></ion-icon>
             </button>
           </ion-item-options>

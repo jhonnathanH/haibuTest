@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="light-secondary">
       <ion-buttons left>
        <button 
             ion-button 
@@ -17,7 +17,7 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title text-center>Detalle del Empleado</ion-title>
+    <ion-title>Detalle del Empleado</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,7 +25,7 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-header text-center>
+    <ion-card-header text-center class="nombre">
       {{employee.nombre}} {{employee.apellido}}
       <div> <ion-note>ID {{employee.id}}</ion-note></div>
     </ion-card-header>

@@ -1,16 +1,70 @@
-// http://ionicframework.com/docs/theming/
-
-
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.my-sidemenu .content{
+    background-color: #303F9F;
+    }
+    .my-sidemenu .toolbar .toolbar-background {
+        background-color:  #2D3238;
+    }
+    .my-sidemenu .toolbar .toolbar-title {
+        color: #FFFFFF;
+    }
+    .my-sidemenu .content .list {
+        background-color: transparent;
+    }
+    .my-sidemenu .content .list .item {
+        background-color: transparent;
+        color: #FFFFFF;
+    }
+    .my-sidemenu .content .list .item .item-inner {
+        margin-left: 8px;
+    }
+    
+    .my-navbar .toolbar .toolbar-background {
+        background-color: #2D3238;
+    }
+    .my-navbar .toolbar-content .toolbar-title {
+        color: #FFFFFF;
+    }
+    .my-navbar .toolbar .icon {
+        color: #FFFFFF;
+    }
+    .my-navbar .back-button-text{
+        color: #FFFFFF;
+    }
+    
+    .my-sidemenu .content .list .item {
+        background-color: transparent;
+        color: #FFFFFF;
+            border-bottom: 1px solid #dedede;
+        }
+        .my-sidemenu .content .list .item.active {
+            background-color: #2D3238;
+            color: #FFFFFF;
+        }
+        .my-sidemenu .content .list .item.active .item-inner {
+            border:none;
+        }
+        .my-sidemenu .content .list .item .item-inner {
+            margin-left: 8px;
+            border:none;
+        }
+    
+        .footer {
+            color: #FFFFFF !important;
+            background-color:transparent !important;
+            border-bottom: 1px solid #303F9F !important;
+        }
+    
+        ion-footer{
+            border:none !important;
+            border-bottom: 10px solid #dedede !important;
+        }
+    
+         .my-sidemenu .content {
+            background-image: linear-gradient(-90deg,rgb(89, 78, 241), rgb(35, 136, 161)) !important;
+          //  background-image: url('./../assets/imgs/fondo2.jpg') !important;
+            background-position: center !important;
+            background-size: cover !important;
+           
+      }
+     
+    
