@@ -1,0 +1,119 @@
+<!--
+  Generated template for the DetailEmployeePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons left>
+       <button 
+            ion-button 
+            clear
+            color="dark" 
+            icon-only 
+           navPop>
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Detalle del Empleado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header text-center>
+      {{employee.nombre}} {{employee.apellido}}
+      <div> <ion-note>ID {{employee.id}}</ion-note></div>
+    </ion-card-header>
+    <ion-card-content text-center>
+      informacion de interes del empleado
+    </ion-card-content>
+  </ion-card>
+  <div>
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Telefono</ion-label>
+        <ion-input type="text" required [disabled]="true" value="{{employee.telefono}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>RUT</ion-label>
+        <ion-input type="text" required [disabled]="true" value="{{employee.rut}}"></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Fecha de Nacimiento</ion-label>
+        <ion-input type="text" required [disabled]="true" value="{{employee.fechaNacimiento}}"></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <ion-note>Dirección</ion-note>
+          <div>
+            <h3 class="dir">Calle:</h3>
+            <h4 class="dir"> {{employee.direccion.calle}}</h4 >
+              
+          </div>
+          <div>
+              <h3 class="dir">Numero:</h3>
+              <h4 class="dir"> {{employee.direccion.numero}}</h4 >
+                
+            </div>
+            <div>
+                <h3 class="dir">Comuna:</h3>
+                <h4 class="dir"> {{employee.direccion.comuna}}</h4 >
+                  
+              </div>
+          <!-- <ion-textarea [disabled]="true" placeholder="Calle: {{employee.direccion.calle}}">
+          </ion-textarea>
+          <ion-textarea [disabled]="true" placeholder="Numero: {{employee.direccion.numero}}">
+          </ion-textarea>
+          <ion-textarea [disabled]="true" placeholder="Comuna: {{employee.direccion.comuna}}">
+          </ion-textarea>    close -->
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+  <div color="danger" class="bandRut" *ngIf="!bandRut">
+      <ion-note>no valido</ion-note>
+      <ion-icon class="closeico" name="close"></ion-icon>
+    </div>
+
+    <div color="danger" class="bandFecha" *ngIf="!bandFecha">
+        <ion-note>no valido</ion-note>
+        <ion-icon class="closeico" name="close"></ion-icon>
+      </div>
+  <ion-card color="secondary" *ngIf="userValid">
+
+      <ion-card-header text-center>
+        Activo
+      </ion-card-header>
+  
+      <ion-card-content text-center>
+       Empleado activo desde....
+      </ion-card-content>
+  
+    </ion-card>
+
+    <ion-card color="danger" *ngIf="!userValid">
+
+        <ion-card-header text-center>
+          Descontinuado
+        </ion-card-header>
+    
+        <ion-card-content text-center>
+            Empleado Descontinuado desde....
+        </ion-card-content>
+    
+      </ion-card>
+
+</ion-content>

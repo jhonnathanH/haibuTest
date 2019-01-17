@@ -8,11 +8,19 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-card>
+    <img text-center padding src="assets/imgs/logo-haibu.png" />
+    <ion-card-content>
+      <ion-card-title text-center>
+        HaibuTestApp
+      </ion-card-title>
+      <ion-note>
+        Aplicación Busqueda de Empleados en Ionic 3
+      </ion-note>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    </ion-card-content>
+  </ion-card>
+  <div padding>
+    <button ion-button full small  color="primary" (click)="find()">Buscar Empleados</button>
+  </div>
 </ion-content>

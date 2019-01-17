@@ -1,0 +1,66 @@
+<ion-header *ngIf="!ifSelect()">
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Buscar Empleados</ion-title>
+    <ion-buttons end>
+      <button 
+            ion-button 
+            clear
+            class="search" 
+            color="dark" 
+            icon-only 
+            (click)="onSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-header *ngIf="ifSelect()">
+  <ion-searchbar 
+            class="searchbar" 
+            (ionCancel)="onCancel($event)" 
+            [animated]="true" 
+            [showCancelButton]="true" 
+            padding
+             [(ngModel)]="searchTerm"
+              (ionInput)="searchEmployees()"></ion-searchbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item-sliding *ngFor="let employee of employees; let i=index">
+         <ion-item >
+          <ion-grid>
+            <ion-row>
+      
+              <ion-col (click)="onSelect(employee)" col-auto class="auto">
+                <h2 class="nombre"> {{employee.nombre}} </h2> <h3 class="apellido" >{{employee.apellido}}</h3>
+                <div>
+                  <p >ID del empleado {{employee.id}} </p>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+        <ion-item-options side="right">
+            <button ion-button color="secondary" 
+                   clear 
+                   icon-only  (click)="onEditOrder(order,i)">
+              <ion-icon name="md-create"></ion-icon>
+            </button>
+            <button ion-button color="danger" 
+                   clear 
+                   icon-only  (click)="onDeleteOrder(order,i)">
+              <ion-icon name="md-trash"></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+       </ion-list>
+
+</ion-content>
