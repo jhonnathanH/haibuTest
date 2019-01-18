@@ -37,9 +37,9 @@
         <ion-item-sliding *ngFor="let employee of employees; let i=index">
          <ion-item >
           <ion-grid>
-            <ion-row>
+            <ion-row (click)="onSelect(employee)" >
       
-              <ion-col (click)="onSelect(employee)" col-auto class="auto">
+              <ion-col col-auto class="auto">
                 <h2 class="nombre"> {{employee.nombre}} </h2> <h3 class="apellido" >{{employee.apellido}}</h3>
                 <div>
                   <p >ID del empleado {{employee.id}} </p>
